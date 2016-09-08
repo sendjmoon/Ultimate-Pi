@@ -1,0 +1,51 @@
+{
+  "name": "Ultimate-Pi",
+  "version": "1.0.0",
+  "description": "A full-stack interface utilizing a Raspberry Pi to act as an infrared remote.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "test": "./node_modules/karma/bin/karma.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sendjmoon/Ultimate-Pi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sendjmoon/Ultimate-Pi/issues"
+  },
+  "homepage": "https://github.com/sendjmoon/Ultimate-Pi#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "autoprefixer": "^6.4.1",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "node-sass": "^3.9.3",
+    "postcss-loader": "^0.12.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.8",
+    "jasmine-core": "^2.5.1",
+    "karma": "^1.2.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-webpack": "^1.8.0",
+    "webpack-dev-server": "^1.15.1"
+  }
+}
