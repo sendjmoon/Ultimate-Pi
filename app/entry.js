@@ -37,3 +37,4 @@ ultimateApp.config(['$routeProvider', '$location', ($rp, $location) => {
       redirectTo: './home'
     });
 }]);
+
