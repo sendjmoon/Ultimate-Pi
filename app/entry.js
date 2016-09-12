@@ -10,7 +10,7 @@ require('./controllers')(ultimateApp);
 require('./components')(ultimateApp);
 
 ultimateApp.run(['$rootScope', ($rs) => {
-  $rs.baseUrl = `${__API_URL__}/api/user`,
+  $rs.baseUrl = `${__API_URL__}`,
   $rs.userConfig = {
     headers: {
       'Content-Type': 'application/json',
@@ -34,6 +34,6 @@ ultimateApp.config(['$routeProvider', ($rp) => {
       template: require('./html/home.html')
     })
     .otherwise({
-      redirectTo: '/home'
+      redirectTo: '/signup'
     });
 }]);
