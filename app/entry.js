@@ -4,8 +4,10 @@ require('!!file?name=[name].[ext]!./html/index.html');
 require('./scss/base.scss');
 
 const angular = require('angular');
-let ultimateApp = angular.module('ultimateApp', [require('angular-route')]);
+let ultimateApp = angular.module('ultimateApp', [require('angular-route'), require('angular-jwt')]);
+// process.env.APP_SECRET = 'testSecret';
 
+require('./services')(ultimateApp);
 require('./controllers')(ultimateApp);
 require('./components')(ultimateApp);
 
@@ -21,6 +23,9 @@ ultimateApp.run(['$rootScope', ($rs) => {
 
 ultimateApp.config(['$routeProvider', ($rp) => {
   $rp
+    .when('/home', {
+      template: require('./html/home.html')
+    })
     .when('/signup', {
       template: require('./html/sign-up.html')
     })
@@ -30,10 +35,7 @@ ultimateApp.config(['$routeProvider', ($rp) => {
       //   $location('./home');
       // }
     })
-    .when('/home', {
-      template: require('./html/home.html')
-    })
     .otherwise({
-      redirectTo: '/signup'
+      redirectTo: '/home'
     });
 }]);
