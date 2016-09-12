@@ -19,22 +19,21 @@ ultimateApp.run(['$rootScope', ($rs) => {
   };
 }]);
 
-ultimateApp.config(['$routeProvider', '$location', ($rp, $location) => {
+ultimateApp.config(['$routeProvider', ($rp) => {
   $rp
     .when('/signup', {
       template: require('./html/sign-up.html')
     })
-    .when('signin', {
+    .when('/signin', {
       template: require('./html/sign-in.html'),
       // resolve: function() {
       //   $location('./home');
       // }
     })
-    .when('./home', {
+    .when('/home', {
       template: require('./html/home.html')
     })
     .otherwise({
-      redirectTo: './home'
+      redirectTo: '/home'
     });
 }]);
-
