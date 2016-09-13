@@ -23,5 +23,17 @@ module.exports = function(app) {
         command: 'SEND_ONCE'
       },
     ];
+
+    this.pressButton = function(remote, name, command) {
+      console.log('remote: ' + remote);
+      console.log('name: ' + name);
+      console.log('command: ' + command);
+      $http.post(this.baseUrl + '/api/remote')
+      .then((res) => {
+        console.log('res: ' + res);
+      }).catch((err) => {
+        console.log(err);
+      });
+    };
   }]);
 };
