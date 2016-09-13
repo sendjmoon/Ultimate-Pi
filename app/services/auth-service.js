@@ -17,6 +17,7 @@ module.exports = function(app) {
         this.getUser();
         return token;
       },
+
       getUser: function() {
         let token = this.getToken();
         if (!token) return;
@@ -26,6 +27,7 @@ module.exports = function(app) {
       },
 
       logOut: function() {
+        console.log('logout fxn');
         $window.localStorage.token = '';
         this.currentUser = '';
         this.token = '';
