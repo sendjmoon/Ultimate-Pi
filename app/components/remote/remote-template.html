@@ -1,3 +1,5 @@
 <div>
-  
+  <ul ng-init="$ctrl.getButtons()">
+    <li ng-repeat="button in $ctrl.buttons" ng-click="$ctrl.pressButton(button.remoteName, button.name, button.command)">{{button.name}}</li>
+  </ul>
 </div>
