@@ -1,31 +1,42 @@
 'use strict';
 
-module.exports = function(app) {
-  app.controller('AuthController', ['$http', '$location', '$window', function($http, $location, $window) {
+module.exports = (app) => {
+  app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
+    if(auth.getToken({noRedirect: true})) $location.path('/home');
+    // if(!auth.getToken()) $location.path('/signup');
     this.signup = function(user) {
       $http.post(this.baseUrl + '/api/signup', user)
-        .then(res => {
-          // Unsecure
-          $http.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token;
+        .then((res) => {
+          auth.setToken(res.data.token);
           $location.path('/home');
-        }, err => {
-          alert(err.message + ' dumbass!!!');
+          // $http.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token;
+          // $location.path('/home');
+        },(err) => {
+          alert('error in signup function: ' + err.message);
         });
     };
 
     this.signin = function(user) {
+      console.log(user);
       $http.get(this.baseUrl + '/api/signin', {
         headers: {
           'Authorization': 'Basic ' + $window.btoa(user.username + ':' + user.password)
         }
       })
-      .then(res => {
-        $http.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token;
+      .then((res) => {
+        console.log('signin function: correct info');
+        auth.setToken(res.data.token);
         $location.path('/home');
-      }, err => {
-        alert(err.message + ' dumbass!!!');
-      });
 
+        // $http.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token;
+        // $location.path('/home');
+      }, (err) => {
+        alert('error in signin function: ' + err.data);
+      });
     };
+
+    this.getUser = auth.getUser.bind(auth);
+    this.logOut = auth.logOut.bind(auth);
+    this.currentUser = auth.currentUser;
   }]);
 };
