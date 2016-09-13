@@ -27,7 +27,6 @@ module.exports = function(app) {
       },
     ];
 
-    // Currently unused
     // this.getButtons = function() {
     //   $http.get(this.baseUrl + '/api/remote')
     //   .then((res) => {
@@ -44,7 +43,7 @@ module.exports = function(app) {
 
     this.pressButton = function(btnCommand) {
       console.log('command: ' + btnCommand);
-      $http.post(this.baseUrl + '/api/remote/' + btnCommand
+      $http.get(this.baseUrl + '/api/remote/' + btnCommand
       .then((res) => {
         console.log('res: ' + res);
       }).catch((err) => {
