@@ -5,8 +5,9 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0;
-  background: url('http://www.publicdomainpictures.net/pictures/20000/velka/power-button-on-tv-remote.jpg') no-repeat center center fixed;
-  background-size: cover;
+  // background: url('http://www.publicdomainpictures.net/pictures/20000/velka/power-button-on-tv-remote.jpg') no-repeat center center fixed;
+  // background-size: cover;
+  background: linear-gradient(0deg, rgba(2,173,231,0.3), rgba(2,173,231,0.3)), url('http://www.publicdomainpictures.net/pictures/20000/velka/power-button-on-tv-remote.jpg') no-repeat center center fixed;
 }
 
 main {
