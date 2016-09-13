@@ -7,8 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "test": "./node_modules/karma/bin/karma.js"
+    "heroku-postbuild": "./node_modules/webpack/bin/webpack.js",
+    "start": "node server.js",
+    "test": "./node_modules/karma/bin/karma.js",
+    "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
   },
   "repository": {
     "type": "git",
