@@ -24,6 +24,20 @@ module.exports = function(app) {
       },
     ];
 
+    this.getButtons = function() {
+      $http.get(this.baseUrl + '/api/remote')
+      .then((res) => {
+        let array = res.data;
+        array.forEach((index) => {
+          this.buttons.push(index);
+        });
+        console.log(this.buttons);
+      })
+      .catch((err) => {
+        console.log('error getting buttons: ' + err.data);
+      });
+    };
+
     this.pressButton = function(remote, name, command) {
       console.log('remote: ' + remote);
       console.log('name: ' + name);
