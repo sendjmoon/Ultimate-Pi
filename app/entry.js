@@ -32,10 +32,10 @@ ultimateApp.config(['$routeProvider', ($rp) => {
       template: require('./html/sign-up.html')
     })
     .when('/signin', {
-      template: require('./html/sign-in.html'),
-      // resolve: function() {
-      //   $location('./home');
-      // }
+      template: require('./html/sign-in.html')
+    })
+    .when('/remote', {
+      template: require('./html/remote.html')
     })
     .otherwise({
       redirectTo: '/signin'

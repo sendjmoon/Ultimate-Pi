@@ -1,3 +1,5 @@
 <div>
-  
+  <ul ng-init="$ctrl.getButtons()">
+    <li ng-repeat="button in $ctrl.buttons">{{button.name}}</li>
+  </ul>
 </div>
