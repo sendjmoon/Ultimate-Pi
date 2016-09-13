@@ -32,6 +32,7 @@ module.exports = function(app) {
         console.log('logout fxn');
         $window.localStorage.token = '';
         this.currentUser = {};
+        this.toggleView = false;
         this.token = '';
         $location.path('/signin');
       }
