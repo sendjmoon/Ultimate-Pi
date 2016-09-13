@@ -1,8 +1,9 @@
-<form name="signup" data-ng-submit="$ctrl.signup($ctrl.user)">
-  <label for="username">Username: </label>
-  <input type="text" required data-ng-model="$ctrl.user.username">
-  <label for="password">Password: </label>
-  <input type="password" required data-ng-model="$ctrl.user.password">
+<form name="signup" class="signup-form" data-ng-submit="$ctrl.signup($ctrl.user)">
+  <h3 class="signup-title"> GET STARTED </h4>
+  <label for="username" class="signup-label"> Username</label>
+  <input type="text" class="form-control" id="signup-input" required data-ng-model="$ctrl.user.username">
+  <label for="password" class="signup-label"> Password </label>
+  <input type="password" class="form-control" id="signup-input" value="fart" required data-ng-model="$ctrl.user.password">
 
-  <button type="submit" class="btn btn-default">Sign Up</button>
+  <button type="submit" class="btn btn-default"> Sign Up </button>
 </form>
