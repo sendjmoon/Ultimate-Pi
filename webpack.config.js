@@ -46,7 +46,7 @@ module.exports = {
         exclude: '/node_modules'
       },
       {
-        test: /\.(jpg|gif)$/,
+        test: /\.(jpg|gif|png)$/,
         loader: 'file?name=image/[hash]-[name].[ext]',
       },
       {
@@ -56,4 +56,3 @@ module.exports = {
     ],
   }
 };
-
