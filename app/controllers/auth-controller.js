@@ -2,7 +2,6 @@
 
 module.exports = (app) => {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
-    this.toggleView = false;
     if(auth.getToken({noRedirect: true})) $location.path('/home');
     // if(!auth.getToken()) $location.path('/signup');
     this.signup = function(user) {
@@ -32,6 +31,12 @@ module.exports = (app) => {
         alert('error in signin function: ' + err.data);
       });
     };
+
+    this.isLoggedIn = function () {
+      if (auth.getToken() && auth.getUser().username.length > 0) return true; 
+    };
+
+
 
     this.getUser = auth.getUser.bind(auth);
     this.logOut = auth.logOut.bind(auth);

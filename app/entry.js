@@ -24,8 +24,8 @@ ultimateApp.run(['$rootScope', ($rs) => {
 ultimateApp.config(['$routeProvider', ($rp) => {
   $rp
     .when('/home', {
-      template: require('./html/remote.html'),
-      controller: 'RemoteController',
+      template: require('./html/home.html'),
+      controller: 'AuthController',
       access: {allowAnonymous: false}
     })
     .when('/signup', {

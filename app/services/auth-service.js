@@ -5,12 +5,11 @@ module.exports = function(app) {
     return {
       currentUser: {},
       getToken: function(options) {
-        if (options) options.noRedirect = true;
         options = options || {};
-        console.log(options.noRedirect);
         if (this.token) return this.token;
         if ($window.localStorage.token) return this.setToken($window.localStorage.token);
         if (!options.noRedirect) $location.path('/signup');
+        // if (!noRedirect) $location.path('/signin');
       },
 
       setToken: function(token) {
@@ -22,7 +21,7 @@ module.exports = function(app) {
 
       getUser: function() {
         let token = this.getToken();
-        if (!token) return;
+        if (!token) return false;
         let decoded = jwtHelper.decodeToken(token);
         this.currentUser.username = decoded.idd;
         return this.currentUser;
@@ -35,7 +34,8 @@ module.exports = function(app) {
         this.toggleView = false;
         this.token = '';
         $location.path('/signin');
-      }
+      },
+
     };
   }]);
 };
