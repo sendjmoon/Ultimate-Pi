@@ -11,8 +11,6 @@ module.exports = (app) => {
         .then((res) => {
           auth.setToken(res.data.token);
           $location.path('/home');
-          // $http.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token;
-          // $location.path('/home');
         },(err) => {
           alert('error in signup function: ' + err.message);
         });
@@ -30,9 +28,6 @@ module.exports = (app) => {
         console.log('signin function: correct info');
         auth.setToken(res.data.token);
         $location.path('/home');
-
-        // $http.defaults.headers.common['Authorization'] = 'Bearer ' + res.data.token;
-        // $location.path('/home');
       }, (err) => {
         alert('error in signin function: ' + err.data);
       });
