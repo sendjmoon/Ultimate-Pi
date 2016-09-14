@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const ExtractText = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-const API_URL = JSON.stringify(process.env.API_URL || 'http://localhost:3000');
+const API_URL = JSON.stringify(process.env.API_URL || 'https://universal-pi-backend.heroku.com');
 
 let plugins = [
   new ExtractText('bundle.css'),
