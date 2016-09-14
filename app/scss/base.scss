@@ -75,10 +75,31 @@ sign-up {
 
 #signup-title {
   width: 50%;
-  min-width: 389px;
+  min-width: 400px;
+  margin-bottom: 0;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+#signup-title-header {
+  margin-top: 30px;
 }
 
 #signup-title-two {
   color: rgba(214, 38, 79, 1.0);
+}
+
+#signup-title-subcontent {
+  min-width: 400px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  sign-up {
+    display: flex;
+    flex-direction: column;
+  }
 }

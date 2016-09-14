@@ -1,7 +1,14 @@
-<h1 id="signup-title">
-  <a href="http://www.raspberrypi.org" target="_blank">
-    <img src="../../lib/images/pi-logo.png" width="150"/></a>ULTIMATE <span id="signup-title-two">PI</span>
-</h1>
+<a href="http://www.raspberrypi.org" target="_blank"><img src="../../lib/images/pi-logo.png" width="150"/></a>
+
+<div id="signup-title">
+  <h1 id="signup-title-header">
+    ULTIMATE <span id="signup-title-two">PI</span>
+  </h1>
+  <br />
+  <p id="signup-title-subcontent">
+    Control an infrared device with an app run on the Raspberry Pi.
+  </p>
+</div>
 
 <form name="signup" class="signup-form" data-ng-submit="$ctrl.signup($ctrl.user)">
   <h3 class="signup-title"> GET STARTED </h4>
@@ -11,6 +18,6 @@
   <input type="password" class="form-control" id="signup-input" required placeholder="password" data-ng-model="$ctrl.user.password">
 
   <button type="submit" class="btn btn-primary" id="signup-button"> Sign Up </button>
-  
+
   <span id="signup-footer"> Already a member? <a href="#/signin" class="primary-link">Click here!</a>
 </form>
