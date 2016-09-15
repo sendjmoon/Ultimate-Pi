@@ -2,10 +2,49 @@
   <div id="navbar-title">
     <h1 id="navbar-title-content">Ultimate <span id="signup-title-two">Pi</span> <small> </small><img src="../../lib/images/pi-logo.png" width="50"></h1>
   </div>
-  <ul id="navbar-list">
-    <a href="#/home"><li>HOME</li></a>
-    <a href="#"><li>ABOUT</li></a>
-    <a href="#"><li>FEATURES</li></a>
-    <sign-out></sign-out>
-  </ul>
+    <ul id="navbar-list">
+      <a href="#/home"><li>HOME</li></a>
+      <a href="#"><li>ABOUT</li></a>
+      <a href="#"><li>FEATURES</li></a>
+      <sign-out></sign-out>
+    </ul>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <button class="navbar-toggle"  ng-click="$ctrl.doSomething()"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      </div>
+
+      <!-- </div> -->
+    </nav>
 </nav>
+<div class="navbar-collapse {{$ctrl.collapsedClass}}" id="navcol-1">
+  <ul class="nav navbar-nav">
+    <li class="active" role="presentation"><a href="#">Home </a></li>
+    <li role="presentation"><a href="#">Remote </a></li>
+    <li role="presentation"><a href="#">About </a></li>
+    <li role="presentation"><a href="#">Features </a></li>
+    <li role="presentation"><a href="#"><sign-out></sign-out></a></li>
+  </ul>
+</div>
+
+
+<!-- <header>
+  <div class="page-header">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h1 class="text-uppercase text-primary">Ultimate Pi <small> </small><img src="../../lib/images/pi-logo.png" width="50" height="50"></h1>
+          <button class="navbar-toggle"  ng-click="$ctrl.doSomething()"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div class="navbar-collapse {{$ctrl.collapsedClass}}" id="navcol-1">
+          <ul class="nav navbar-nav">
+            <li class="active" role="presentation"><a href="#">Home </a></li>
+            <li role="presentation"><a href="#">Remote </a></li>
+            <li role="presentation"><a href="#">About </a></li>
+            <li role="presentation"><a href="#">Features </a></li>
+            <li role="presentation"><a href="#"><sign-out></sign-out></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header> -->
