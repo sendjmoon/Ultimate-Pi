@@ -1,3 +1,4 @@
 <div ng-init="$ctrl.getUser()" ng-show="$ctrl.isLoggedIn()">
-  <p>Welcome {{$ctrl.currentUser.username}} <button ng-click="$ctrl.logOut()">Log Out</button></p>
+  <!-- <p>Welcome {{$ctrl.currentUser.username}}</p>  -->
+  <button ng-click="$ctrl.logOut()" class="btn btn-primary" id="signout-button">SIGN OUT</button>
 </div>

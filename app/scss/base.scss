@@ -33,17 +33,78 @@ a:hover {
 
 nav-bar {
   width: 100%;
+  height: 70px;
+  margin: 3% 0 3% 0;
+  background-color: rgba(214, 38, 79, 0.2);
 }
 
-#navbar-full {
+// .navbar-header {
+//   width: 50%;
+// }
+//
+// .nav.navbar-nav {
+//   width: 50%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100%;
+// }
+
+// .page-header {
+//   width: 100%;
+// }
+
+// #navbar-full {
+//   width: 100%;
+// }
+
+#navbar-main {
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
-.page-header {
+#navbar-title {
+  height: 70px;
+  width: 46%;
+  margin: 0 0 0 4%;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+#navbar-title-content {
   width: 100%;
+  height: 100%;
 }
 
-sign-up {
+#navbar-list {
+  height: 70px;
+  width: 50%;
+  margin: 0 4% 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#navbar-list a {
+  height: 45%;
+  width: 20%;
+  min-width: 55px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+#navbar-list a:hover {
+  color: white;
+  background-color: rgba(214, 38, 79, 0.7);
+  border-radius: 5px;
+}
+
+sign-up, sign-in {
   height: 100%;
   width: 100%;
   display: flex;
@@ -62,8 +123,8 @@ sign-up {
 .signup-layout {
   width: 100%;
   height: 100%;
-  padding: 8px;
-  background-color: rgba(106, 158, 232, 0.2);
+  // padding: 8px;
+
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -84,6 +145,17 @@ sign-up {
   margin-top: 5px;
   background-color: rgba(214, 38, 79, 1.0);
   border: none;
+}
+
+#signout-button {
+  width: 100%;
+  margin: 0 0 0 20px;
+  background-color: rgba(214, 38, 79, 0.7);
+  border: none;
+}
+
+#signout-button:hover {
+  background-color: rgba(214, 38, 79, 1.0);
 }
 
 #signup-footer {
@@ -111,6 +183,7 @@ sign-up {
 
 #signup-title-header {
   margin-top: 30px;
+  color: white;
 }
 
 #signup-title-two {
@@ -127,10 +200,10 @@ sign-up {
   height: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-flow: wrap;
-  background-color: rgba(106, 158, 232, 0.2);
+  // background-color: rgba(106, 158, 232, 0.2);
 }
 
 .remote-button-list {
@@ -139,7 +212,7 @@ sign-up {
   display: flex;
   justify-content: center;
   flex-flow: wrap;
-  // background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #remote-button-link {
@@ -155,7 +228,8 @@ sign-up {
   justify-content: center;
   list-style: none;
   color: white;
-  background-color: rgba(0, 0, 0, 0.2);
+  // background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 7px;
 }
 
@@ -164,7 +238,7 @@ sign-up {
 }
 
 @media (max-width: 740px) {
-  sign-up {
+  sign-up, sign-in {
     display: flex;
     flex-direction: column;
     align-items: center;
