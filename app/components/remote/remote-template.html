@@ -1,7 +1,6 @@
 <div class="remote-button-container">
-        <nav-bar base-url="baseUrl"></nav-bar>
+  <nav-bar base-url="baseUrl"></nav-bar>
   <ul ng-init="$ctrl.getButtons()" class="remote-button-list">
     <a href="" ng-repeat="button in $ctrl.buttons" id="remote-button-link"><li ng-click="$ctrl.pressButton(button.button)" id="remote-button-item">{{button.displayName}}<i ng-class="button.class"></i></li></a>
   </ul>
-  <sign-out></sign-out>
 </div>
