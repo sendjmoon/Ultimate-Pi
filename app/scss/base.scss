@@ -115,39 +115,34 @@ sign-up {
 }
 
 .remote-button-list {
-  max-width: 90%;
-  padding-left: 0px;
+  width: 100%;
+  padding: 0 5% 0 5%;
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+  // background-color: rgba(255, 255, 255, 0.1);
+}
+
+#remote-button-link {
+  margin: 0.5%;
 }
 
 #remote-button-item {
   width: 70px;
   height: 70px;
-  margin: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   list-style: none;
   color: white;
-  border: 1px solid rgba(255, 255, 255 ,0.1);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 7px;
 }
 
 #remote-button-item:hover {
   background-color: rgba(214, 38, 79, 0.4);
 }
-
-// .remote-button-item {
-//   display: inline;
-//   list-style: none;
-//   width: 100px;
-//   height: 100px;
-//   margin: 0 2% 0 2%;
-//   border: 1px solid black;
-// }
 
 @media (max-width: 740px) {
   sign-up {

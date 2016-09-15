@@ -3,7 +3,7 @@
 let buttons = [
   {
     button: 'POWER',
-    displayName: 'ON',
+    displayName: 'PWR',
     class: 'fa fa-power-off'
   },
   {
