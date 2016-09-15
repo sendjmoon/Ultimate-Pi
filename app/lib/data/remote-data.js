@@ -53,7 +53,7 @@ let buttons = [
     class: 'fa fa-sign-in'
   },
   {
-    button: 'OKAY',
+    button: 'OK',
     displayName: 'OKAY',
     class: 'fa fa-check-square'
   },
