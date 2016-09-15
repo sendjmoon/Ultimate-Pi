@@ -8,7 +8,9 @@ html, body {
   margin: 0;
   padding: 0;
   background-image: url("../lib/images/power-button-on-tv-remote-greyscale-extra2.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 main {
@@ -22,6 +24,22 @@ a {
 a:hover {
   color: orange;
   text-decoration: none;
+}
+
+.container-fluid {
+  background: none;
+}
+
+nav-bar {
+  width: 100%;
+}
+
+#navbar-full {
+  width: 100%;
+}
+
+.page-header {
+  width: 100%;
 }
 
 sign-up {
