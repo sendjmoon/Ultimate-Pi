@@ -8,7 +8,8 @@ module.exports = (app) => {
       this.isCollasped = !this.isCollasped;
       this.collapsedClass = this.isCollasped ? 'collapse': '';
     };
-    if(auth.getToken({noRedirect: true})) $location.path('/home');
+    console.log($location.url());
+    if (auth.getToken({noRedirect: true}) && $location.url().includes('home')) $location.path('/home');
     // if(!auth.getToken()) $location.path('/signup');
     this.signup = function(user) {
       this.showButtons = true;
