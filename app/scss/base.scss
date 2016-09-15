@@ -37,26 +37,13 @@ nav-bar {
   margin: 3% 0 3% 0;
   background-color: rgba(214, 38, 79, 0.2);
 }
+#navcol-1.navbar-collapse.collapse ul {
+  display: none;
 
-// .navbar-header {
-//   width: 50%;
-// }
-//
-// .nav.navbar-nav {
-//   width: 50%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100%;
-// }
-
-// .page-header {
-//   width: 100%;
-// }
-
-// #navbar-full {
-//   width: 100%;
-// }
+}
+.navbar.navbar-inverse {
+  display: none;
+}
 
 #navbar-main {
   width: 100%;
@@ -263,6 +250,7 @@ sign-up, sign-in {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    margin: 0;
   }
 
   .navbar-collapse {
@@ -271,6 +259,7 @@ sign-up, sign-in {
     margin: 7px 0 0 0;
     height: 100%;
     width: 100%;
+
   }
 
   #navbar-list {
@@ -279,8 +268,8 @@ sign-up, sign-in {
 
   #navbar-main {
     display: flex;
-    // align-items: center;
-    // justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
     height: 100%;
   }
 
@@ -288,12 +277,33 @@ sign-up, sign-in {
     width: 50%;
     border: none;
     background-color: inherit;
-
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
-  // .remote-button-list {
-  //   z-index: 0;
-  // }
+  #navcol-1.navbar-collapse ul li{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 100%;
+  }
+
+  .navbar.navbar-inverse {
+    display: flex;
+  }
+
+  #navbar-title {
+    width: 90%;
+  }
+
+  #navbar-title img {
+    width: 30px;
+  }
+  #signout-button {
+    margin: 0;
+  }
 
   sign-up, sign-in {
     display: flex;
@@ -310,8 +320,32 @@ sign-up, sign-in {
 
 @media only screen
   and (min-device-width: 320px)
-  and (max-device-width: 480px)
+  and (max-device-width: 680px)
   and (-webkit-min-device-pixel-ratio: 2) {
+
+    #navbar-main{
+      display: flex;
+      justify-content: flex-start;
+
+    }
+    .navbar.navbar-inverse {
+      width: 50px;
+      border: none;
+      background-color: inherit;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    #navbar-title {
+      width: 90%;
+    }
+
+    #navbar-title img {
+      width: 30px;
+    }
+
     main {
       width: 100%;
       height: 100%;
@@ -319,6 +353,10 @@ sign-up, sign-in {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+    }
+
+    .remote-button-container {
+      margin-top: 300px;
     }
 
     sign-up {
