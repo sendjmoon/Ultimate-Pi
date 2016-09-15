@@ -79,10 +79,8 @@
 	    template: __webpack_require__(42)
 	  }).when('/signin', {
 	    template: __webpack_require__(43)
-	  }).when('/remote', {
-	    template: __webpack_require__(44)
 	  }).otherwise({
-	    redirectTo: '/signin'
+	    redirectTo: '/home'
 	  });
 	}]);
 
@@ -33364,6 +33362,7 @@
 	        options = options || {};
 	        if (this.token) return this.token;
 	        if ($window.localStorage.token) return this.setToken($window.localStorage.token);
+	        if ($window.localStorage.token === '') $location.path('/signin');
 	        if (!options.noRedirect) $location.path('/signup');
 	        // if (!noRedirect) $location.path('/signin');
 	      },
@@ -33391,7 +33390,6 @@
 	        this.token = '';
 	        $location.path('/signin');
 	      }
-
 	    };
 	  }]);
 	};
@@ -33793,7 +33791,7 @@
 /* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<nav id=\"navbar-main\">\n  <div id=\"navbar-title\">\n    <h1 id=\"navbar-title-content\">Ultimate <span id=\"signup-title-two\">Pi</span> <small> </small><img src=\"" + __webpack_require__(31) + "\" width=\"50\"></h1>\n  </div>\n    <ul id=\"navbar-list\">\n      <a href=\"#/home\"><li>HOME</li></a>\n      <a href=\"#\"><li>ABOUT</li></a>\n      <a href=\"#\"><li>FEATURES</li></a>\n      <sign-out></sign-out>\n    </ul>\n    <nav class=\"navbar navbar-inverse\">\n      <div class=\"container-fluid\">\n        <button class=\"navbar-toggle\"  ng-click=\"$ctrl.doSomething()\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button>\n      </div>\n\n      <!-- </div> -->\n    </nav>\n</nav>\n<div class=\"navbar-collapse {{$ctrl.collapsedClass}}\" id=\"navcol-1\">\n  <ul class=\"nav navbar-nav\">\n    <li class=\"active\" role=\"presentation\"><a href=\"#\">Home </a></li>\n    <li role=\"presentation\"><a href=\"#\">Remote </a></li>\n    <li role=\"presentation\"><a href=\"#\">About </a></li>\n    <li role=\"presentation\"><a href=\"#\">Features </a></li>\n    <li role=\"presentation\"><a href=\"#\"><sign-out></sign-out></a></li>\n  </ul>\n</div>\n\n\n<!-- <header>\n  <div class=\"page-header\">\n    <nav class=\"navbar navbar-inverse\">\n      <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n          <h1 class=\"text-uppercase text-primary\">Ultimate Pi <small> </small><img src=\"" + __webpack_require__(31) + "\" width=\"50\" height=\"50\"></h1>\n          <button class=\"navbar-toggle\"  ng-click=\"$ctrl.doSomething()\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button>\n        </div>\n        <div class=\"navbar-collapse {{$ctrl.collapsedClass}}\" id=\"navcol-1\">\n          <ul class=\"nav navbar-nav\">\n            <li class=\"active\" role=\"presentation\"><a href=\"#\">Home </a></li>\n            <li role=\"presentation\"><a href=\"#\">Remote </a></li>\n            <li role=\"presentation\"><a href=\"#\">About </a></li>\n            <li role=\"presentation\"><a href=\"#\">Features </a></li>\n            <li role=\"presentation\"><a href=\"#\"><sign-out></sign-out></a></li>\n          </ul>\n        </div>\n      </div>\n    </nav>\n  </div>\n</header> -->\n";
+	module.exports = "<nav id=\"navbar-main\">\n  <div id=\"navbar-title\">\n    <h1 id=\"navbar-title-content\">Ultimate <span id=\"signup-title-two\">Pi</span> <small> </small><img src=\"" + __webpack_require__(31) + "\" width=\"50\"></h1>\n  </div>\n    <ul id=\"navbar-list\">\n      <a href=\"#/home\"><li>HOME</li></a>\n      <a href=\"#/about\"><li>ABOUT</li></a>\n      <a href=\"#/features\"><li>FEATURES</li></a>\n      <sign-out></sign-out>\n    </ul>\n    <nav class=\"navbar navbar-inverse\">\n      <div class=\"container-fluid\">\n        <button class=\"navbar-toggle\"  ng-click=\"$ctrl.doSomething()\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button>\n      </div>\n\n      <!-- </div> -->\n    </nav>\n</nav>\n<div class=\"navbar-collapse {{$ctrl.collapsedClass}}\" id=\"navcol-1\">\n  <ul class=\"nav navbar-nav\">\n    <li class=\"active\" role=\"presentation\"><a href=\"#/home\">Home </a></li>\n    <li role=\"presentation\"><a href=\"#/about\">About </a></li>\n    <li role=\"presentation\"><a href=\"#/features\">Features </a></li>\n    <li role=\"presentation\"><sign-out></sign-out></li>\n  </ul>\n</div>\n";
 
 /***/ },
 /* 38 */
@@ -33836,12 +33834,6 @@
 /***/ function(module, exports) {
 
 	module.exports = "<sign-in base-url=\"baseUrl\"></sign-in>\n";
-
-/***/ },
-/* 44 */
-/***/ function(module, exports) {
-
-	module.exports = "<remote base-url=\"baseUrl\"></remote>\n";
 
 /***/ }
 /******/ ]);
