@@ -258,7 +258,43 @@ sign-up, sign-in {
   background-color: rgba(214, 38, 79, 0.7);
 }
 
-@media (max-width: 740px) {
+@media (max-width: 768px) {
+  .container-fluid {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .navbar-collapse {
+    background-color: black;
+    opacity: 1;
+    margin: 7px 0 0 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  #navbar-list {
+    display: none;
+  }
+
+  #navbar-main {
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    height: 100%;
+  }
+
+  .navbar.navbar-inverse {
+    width: 50%;
+    border: none;
+    background-color: inherit;
+
+  }
+
+  // .remote-button-list {
+  //   z-index: 0;
+  // }
+
   sign-up, sign-in {
     display: flex;
     flex-direction: column;
