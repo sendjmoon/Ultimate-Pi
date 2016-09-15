@@ -90,18 +90,24 @@ nav-bar {
 #navbar-list a {
   height: 45%;
   width: 20%;
-  min-width: 55px;
-  color: white;
+  min-width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   list-style: none;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.2s ease;
 }
 
 #navbar-list a:hover {
   color: white;
+  background-color: rgba(214, 38, 79, 0.4);
+}
+
+#navbar-list a:active {
   background-color: rgba(214, 38, 79, 0.7);
-  border-radius: 5px;
 }
 
 sign-up, sign-in {
@@ -143,6 +149,13 @@ sign-up, sign-in {
 #signup-button {
   width: 100%;
   margin-top: 5px;
+  background-color: rgba(214, 38, 79, 0.8);
+  border: none;
+}
+
+#signup-button:hover {
+  width: 100%;
+  margin-top: 5px;
   background-color: rgba(214, 38, 79, 1.0);
   border: none;
 }
@@ -150,8 +163,9 @@ sign-up, sign-in {
 #signout-button {
   width: 100%;
   margin: 0 0 0 20px;
-  background-color: rgba(214, 38, 79, 0.7);
   border: none;
+  background-color: rgba(214, 38, 79, 0.5);
+  transition: background-color 0.2s ease;
 }
 
 #signout-button:hover {
@@ -217,6 +231,7 @@ sign-up, sign-in {
 
 #remote-button-link {
   margin: 0.5%;
+  text-decoration: none;
 }
 
 #remote-button-item {
@@ -227,14 +242,20 @@ sign-up, sign-in {
   align-items: center;
   justify-content: center;
   list-style: none;
-  color: white;
-  // background-color: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 7px;
+  color: white;
 }
 
 #remote-button-item:hover {
   background-color: rgba(214, 38, 79, 0.4);
+}
+
+#remote-button-item:active {
+  text-decoration: none;
+  transform: translateY(3px);
+  background-color: rgba(214, 38, 79, 0.7);
 }
 
 @media (max-width: 740px) {
