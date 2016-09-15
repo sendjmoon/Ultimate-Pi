@@ -39,10 +39,7 @@ ultimateApp.config(['$routeProvider', ($rp) => {
     .when('/signin', {
       template: require('./html/sign-in.html')
     })
-    .when('/remote', {
-      template: require('./html/remote.html')
-    })
     .otherwise({
-      redirectTo: '/signin'
+      redirectTo: '/home'
     });
 }]);
