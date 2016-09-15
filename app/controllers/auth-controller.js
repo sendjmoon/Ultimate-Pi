@@ -2,12 +2,7 @@
 
 module.exports = (app) => {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
-    this.isCollasped = true;
-    this.collapsedClass = this.isCollasped ? 'collapse': '';
-    this.doSomething = function(){
-      this.isCollasped = !this.isCollasped;
-      this.collapsedClass = this.isCollasped ? 'collapse': '';
-    };
+    
     if(auth.getToken({noRedirect: true})) $location.path('/home');
     // if(!auth.getToken()) $location.path('/signup');
     this.signup = function(user) {
