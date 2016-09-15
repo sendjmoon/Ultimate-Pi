@@ -23,6 +23,11 @@ ultimateApp.run(['$rootScope', ($rs) => {
 
 ultimateApp.config(['$routeProvider', ($rp) => {
   $rp
+    .when('/about', {
+      template: require('./html/about.html'),
+      controller: 'AuthController',
+      access: {allowAnonymous: true}
+    })
     .when('/home', {
       template: require('./html/home.html'),
       controller: 'AuthController',

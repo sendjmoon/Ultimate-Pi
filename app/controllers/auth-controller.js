@@ -3,8 +3,8 @@
 module.exports = (app) => {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
     
-    if(auth.getToken({noRedirect: true})) $location.path('/home');
-    // if(!auth.getToken()) $location.path('/signup');
+    console.log($location.url());
+    if (auth.getToken({noRedirect: true}) && $location.url().includes('home')) $location.path('/home');
     this.signup = function(user) {
       this.showButtons = true;
       $http.post(this.baseUrl + '/api/signup', user)
