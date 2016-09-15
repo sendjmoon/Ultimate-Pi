@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "./node_modules/webpack/bin/webpack.js",
-    "test": "./node_modules/karma/bin/karma.js",
+    "test": "./node_modules/karma/bin/karma start --browsers PhantomJS --single-run",
     "watch": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
   },
   "repository": {
