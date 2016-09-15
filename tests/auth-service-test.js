@@ -4,44 +4,52 @@ const angular = require('angular');
 let testApp = angular.module('testApp', [require('angular-jwt')]);
 require('../app/services')(testApp);
 
+let testUser = {
+  username: 'mockTestUser',
+  password: '1234',
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGQiOiJhdXRoVGVzdFVzZXIiLCJpYXQiOjE0NzM5MTYyNTV9.R7fr7iaNbT0jSVEgqWpRXIb7RAsOJ2TOKzPT8Dim1QM'
+};
+
 describe('service: AuthService', function() {
   beforeEach(angular.mock.module('testApp'));
 
   it('should get the token', angular.mock.inject(function(auth) {
-    this.token = 'testToken';
+    auth.token = testUser.token;
     let token = auth.getToken();
-    expect(token).toBe('testToken');
+    expect(token).toBe(testUser.token);
 
   }));
 
   it('should set the Token', angular.mock.inject(function(auth) {
-    let testToken = 'testingSetToken';
+    let testToken = testUser.token;
     let testResult = auth.setToken(testToken);
-    expect(testResult).toBe(testToken);
+    expect(testResult).toBe(testUser.token);
     expect(auth.token).toBe(testToken);
     
     let token = auth.getToken();
-    expect(token).toBe(testToken);
+    expect(token).toBe(testUser.token);
 
   }));
 
   it('should get the user', angular.mock.inject(function(auth) {
-    let noUserTest = auth.getUser();
-    expect(noUserTest).toBe(false);
-    expect(auth.currentUser).toBe(undefined);
-    
-    auth.currentUser = 'testUser';
-    auth.token = 'testToken'; // Need a token to reach return statement
+    console.log(auth.user);
+    console.log(auth.token);
     let userTest = auth.getUser();
-    expect(userTest).toBe('testUser');
+    console.log(userTest);
+    
+    // auth.user = testUser.username;
+    // auth.token = testUser.token;
+    expect(auth.user).toBe(undefined);
+    // let userTest = auth.getUser();
+    // expect(userTest).toBe(testUser);
   }));
 
   it('should logout the user', angular.mock.inject(function(auth) {
-    auth.token = 'testToken';
-    auth.currentUser.username = 'logoutTestUser';
+    auth.token = testUser.token;
+    auth.currentUser.username = testUser.username;
     auth.logOut();
     expect(auth.token).toBe('');
-    expect(auth.currentUser).toBe({});
+    expect(Object.keys(auth.currentUser).length === 0).toBe(true);
   }));
 });
 
