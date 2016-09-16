@@ -248,7 +248,7 @@ sign-up, sign-in {
 @media (max-width: 768px) {
   .container-fluid {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
     margin: 0;
     height: 70px;
@@ -301,6 +301,13 @@ sign-up, sign-in {
   #navbar-title img {
     width: 30px;
   }
+
+  #navbar-title-content {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
   #signout-button {
     margin: 0;
   }
@@ -323,11 +330,11 @@ sign-up, sign-in {
   and (max-device-width: 680px)
   and (-webkit-min-device-pixel-ratio: 2) {
 
-    #navbar-main{
+    #navbar-main {
       display: flex;
       justify-content: flex-start;
-
     }
+    
     .navbar.navbar-inverse {
       width: 50px;
       border: none;
