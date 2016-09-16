@@ -2,7 +2,7 @@
 
 module.exports = (app) => {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
-    
+
     console.log($location.url());
     if (auth.getToken({noRedirect: true}) && $location.url().includes('home')) $location.path('/home');
     this.signup = function(user) {
@@ -11,7 +11,7 @@ module.exports = (app) => {
         .then((res) => {
           auth.setToken(res.data.token);
           $location.path('/home');
-        },(err) => {
+        }, (err) => {
           alert('error in signup function: ' + err.message);
         });
     };
@@ -33,11 +33,9 @@ module.exports = (app) => {
       });
     };
 
-    this.isLoggedIn = function () {
+    this.isLoggedIn = function() {
       if (auth.getToken() && auth.getUser().username.length > 0) return true;
     };
-
-
 
     this.getUser = auth.getUser.bind(auth);
     this.logOut = auth.logOut.bind(auth);

@@ -2,7 +2,7 @@
 
 module.exports = function(app) {
   app.controller('RemoteController', ['$http', function($http) {
-    
+
     this.getButtons = function() {
       let dataJSON = require('../lib/data/remote-data.js');
       console.log(dataJSON);
@@ -22,6 +22,5 @@ module.exports = function(app) {
         console.log(err);
       });
     };
-
   }]);
 };
