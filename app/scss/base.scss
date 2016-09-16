@@ -12,6 +12,7 @@
 
 @media (max-width: 768px) {
   .container-fluid {
+    background-color: rgba(0, 0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -39,38 +40,24 @@
   }
 
   .navbar.navbar-inverse {
-    width: 50%;
+    margin-bottom: 0;
     border: none;
-    background-color: inherit;
-    margin: 0;
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  #navcol-1.navbar-collapse ul li{
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    height: 100%;
-  }
-
-  .navbar.navbar-inverse {
-    display: flex;
+    background-color: rgba(0, 0, 0, 0);
   }
 
   #navbar-title {
     width: 90%;
   }
 
-  #navbar-title img {
-    width: 30px;
-  }
-
   #navbar-title-content {
     margin: 0;
     display: flex;
     align-items: center;
+  }
+
+  #navbar-title img {
+    width: 30px;
   }
 
   #signout-button {
@@ -89,6 +76,7 @@
     align-items: center;
   }
 }
+
 
 @media only screen
   and (min-device-width: 320px)
@@ -121,7 +109,6 @@
     main {
       width: 100%;
       height: 100%;
-      background-color: rgba(106, 158, 232, 0.2);
       display: flex;
       align-items: center;
       justify-content: flex-end;
