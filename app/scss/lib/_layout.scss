@@ -1,0 +1,75 @@
+.remote-button-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.remote-button-list {
+  width: 100%;
+  padding: 0 5% 0 5%;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+sign-up, sign-in {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.signup-layout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.signup-title {
+  margin-top: 0px;
+}
+
+#signup-footer {
+  width: 100%;
+  margin-top: 5px;
+  text-align: center;
+}
+
+#signup-input {
+  margin-bottom: 5px;
+}
+
+#signup-title {
+  width: 50%;
+  min-width: 400px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+#signup-title-header {
+  margin-top: 30px;
+}
+
+#signup-title-subcontent {
+  min-width: 400px;
+  margin-bottom: 20px;
+}
