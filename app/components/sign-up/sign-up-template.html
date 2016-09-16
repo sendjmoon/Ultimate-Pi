@@ -1,4 +1,6 @@
-<a href="http://www.raspberrypi.org" target="_blank"><img src="../../lib/images/pi-logo.png" width="150"/></a>
+<a href="http://www.raspberrypi.org" target="_blank">
+  <img src="../../lib/images/pi-logo.png" width="150"/>
+</a>
 
 <div id="signup-title">
   <h1 id="signup-title-header">
@@ -11,11 +13,9 @@
 </div>
 
 <form name="signup" class="signup-form" data-ng-submit="$ctrl.signup($ctrl.user)">
-  <h3 class="signup-title"> GET STARTED </h4>
+  <h3 class="signup-title">GET STARTED</h3>
   <input type="text" class="form-control" id="signup-input" required placeholder="Username" data-ng-model="$ctrl.user.username">
   <input type="password" class="form-control" id="signup-input" required placeholder="Password" data-ng-model="$ctrl.user.password">
-
   <button type="submit" class="btn btn-primary" id="signup-button"> Sign Up </button>
-
-  <span id="signup-footer"> Already registered? <a href="#/signin" class="primary-link">Click here!</a>
+  <span id="signup-footer">Already registered?<a href="#/signin" class="primary-link">Click here!</a>
 </form>
