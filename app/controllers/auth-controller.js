@@ -12,13 +12,12 @@ module.exports = (app) => {
           auth.setToken(res.data.token);
           $location.path('/home');
         }, (err) => {
-          alert('error in signup function: ' + err.message);
+          alert('Username already exists');
         });
     };
 
     this.signin = function(user) {
       this.showButtons = true;
-      console.log(user);
       $http.get(this.baseUrl + '/api/signin', {
         headers: {
           'Authorization': 'Basic ' + $window.btoa(user.username + ':' + user.password)
@@ -29,7 +28,7 @@ module.exports = (app) => {
         auth.setToken(res.data.token);
         $location.path('/home');
       }, (err) => {
-        alert('error in signin function: ' + err.data);
+        alert('Invalid Username or Password');
       });
     };
 

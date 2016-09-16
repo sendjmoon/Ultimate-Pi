@@ -39,7 +39,7 @@ describe('auth controller signin/signup/signout tests', function() {
     expect(typeof this.ctrl.signin).toBe('function');
     expect(typeof this.ctrl.signup).toBe('function');
     expect(typeof this.ctrl.isLoggedIn).toBe('function');
-    expect(typeof this.ctrl.doSomething).toBe('function');
+    // expect(typeof this.ctrl.doSomething).toBe('function');
   });
 
   // Testing signup component input and Auth controller function
@@ -49,7 +49,6 @@ describe('auth controller signin/signup/signout tests', function() {
       password: this.ctrl.user.password,
       token: this.ctrl.user.token
     };
-    console.log(requestData);
     this.$httpBackend.expectPOST('undefined/api/signup', requestData)
     .respond(200, {
       data: {
