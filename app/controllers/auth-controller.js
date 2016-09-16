@@ -2,9 +2,13 @@
 
 module.exports = (app) => {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
-    
-    console.log($location.url());
-    if (auth.getToken({noRedirect: true}) && $location.url().includes('home')) $location.path('/home');
+    this.isCollasped = true;
+    this.collapsedClass = this.isCollasped ? 'collapse': '';
+    this.doSomething = function(){
+      this.isCollasped = !this.isCollasped;
+      this.collapsedClass = this.isCollasped ? 'collapse': '';
+    };
+    if(auth.getToken({redirect: '/home'}) && $location.url.contains()) $location.path('/home');
     this.signup = function(user) {
       this.showButtons = true;
       $http.post(this.baseUrl + '/api/signup', user)
@@ -37,11 +41,8 @@ module.exports = (app) => {
       if (auth.getToken() && auth.getUser().username.length > 0) return true;
     };
 
-
-
     this.getUser = auth.getUser.bind(auth);
     this.logOut = auth.logOut.bind(auth);
     this.currentUser = auth.currentUser;
-    this.toggleView = auth.toggleView;
   }]);
 };

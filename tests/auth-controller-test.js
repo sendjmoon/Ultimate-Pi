@@ -6,13 +6,10 @@ let ultimateApp = angular.module('ultimateApp', [require('angular-route'), requi
 require('../app/services')(ultimateApp);
 require('../app/controllers')(ultimateApp);
 require('../app/components')(ultimateApp);
-// require('../app/html')(ultimateApp);
-
-
 
 describe('auth controller signin/signup/signout tests', function() {
   beforeEach(angular.mock.module('ultimateApp'));
-  beforeEach(angular.mock.inject(($rootScope, _$controller_, $httpBackend, _auth_, _$window_) => {
+  beforeEach(angular.mock.inject((_$controller_, $httpBackend, _auth_, _$window_) => {
     this.ctrl = _$controller_('AuthController');
     this.window = _$window_;
     this.ctrl.user = {
@@ -21,7 +18,6 @@ describe('auth controller signin/signup/signout tests', function() {
       token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGQiOiJhdXRoVGVzdFVzZXIiLCJpYXQiOjE0NzM5MTYyNTV9.R7fr7iaNbT0jSVEgqWpRXIb7RAsOJ2TOKzPT8Dim1QM'
     };
     this.auth = _auth_;
-    // this.auth.res.data.token = this.ctrl.user.token;
     this.auth.getToken = (user) => {
       if (user.token === undefined) return false;
       return user.token;
@@ -38,11 +34,6 @@ describe('auth controller signin/signup/signout tests', function() {
     };
     this.$httpBackend = $httpBackend;
   }));
-
-  afterEach(() => {
-    // this.$httpBackend.verifyNoOutStandingExpectation();
-    // this.$httpBackend.verifyNoOutStandingRequest();
-  })
 
   it('should be a controller', () => {
     expect(typeof this.ctrl.signin).toBe('function');
@@ -65,7 +56,6 @@ describe('auth controller signin/signup/signout tests', function() {
         token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGQiOiJhdXRoVGVzdFVzZXIiLCJpYXQiOjE0NzM5MTYyNTV9.R7fr7iaNbT0jSVEgqWpRXIb7RAsOJ2TOKzPT8Dim1QM'
       }
     });
-      // token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGQiOiJhdXRoVGVzdFVzZXIiLCJpYXQiOjE0NzM5MTYyNTV9.R7fr7iaNbT0jSVEgqWpRXIb7RAsOJ2TOKzPT8Dim1QM'});
     this.ctrl.signup({username: this.ctrl.user.username, password: this.ctrl.user.password, token: this.ctrl.user.token});
     this.$httpBackend.flush();
   });
@@ -76,7 +66,6 @@ describe('auth controller signin/signup/signout tests', function() {
       'Authorization': 'Basic ' + this.window.btoa(this.ctrl.user.username + ':' + this.ctrl.user.password),
       'Accept': 'application/json, text/plain, */*'
     };
-    // this.ctrl.user = {};
     let testUser = {
       username: 'mockTestUser',
       password: '1234',
