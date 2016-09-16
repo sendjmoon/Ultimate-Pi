@@ -12,7 +12,7 @@ module.exports = (app) => {
           auth.setToken(res.data.token);
           $location.path('/home');
         }, (err) => {
-          alert('error in signup function: ' + err.message);
+          alert('Username already exists');
         });
     };
 
@@ -29,7 +29,7 @@ module.exports = (app) => {
         auth.setToken(res.data.token);
         $location.path('/home');
       }, (err) => {
-        alert('error in signin function: ' + err.data);
+        alert('Invalid Username or Password');
       });
     };
 
