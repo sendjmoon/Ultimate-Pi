@@ -23,6 +23,11 @@ ultimateApp.run(['$rootScope', ($rs) => {
 
 ultimateApp.config(['$routeProvider', ($rp) => {
   $rp
+    .when('/about', {
+      template: require('./html/about.html'),
+      controller: 'AuthController',
+      access: {allowAnonymous: true}
+    })
     .when('/home', {
       template: require('./html/home.html'),
       controller: 'AuthController',
@@ -34,10 +39,7 @@ ultimateApp.config(['$routeProvider', ($rp) => {
     .when('/signin', {
       template: require('./html/sign-in.html')
     })
-    .when('/remote', {
-      template: require('./html/remote.html')
-    })
     .otherwise({
-      redirectTo: '/signin'
+      redirectTo: '/home'
     });
 }]);

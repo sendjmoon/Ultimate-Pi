@@ -2,14 +2,9 @@
 
 module.exports = (app) => {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
-    this.isCollasped = true;
-    this.collapsedClass = this.isCollasped ? 'collapse': '';
-    this.doSomething = function(){
-      this.isCollasped = !this.isCollasped;
-      this.collapsedClass = this.isCollasped ? 'collapse': '';
-    };
-    if(auth.getToken({noRedirect: true})) $location.path('/home');
-    // if(!auth.getToken()) $location.path('/signup');
+    
+    console.log($location.url());
+    if (auth.getToken({noRedirect: true}) && $location.url().includes('home')) $location.path('/home');
     this.signup = function(user) {
       this.showButtons = true;
       $http.post(this.baseUrl + '/api/signup', user)
