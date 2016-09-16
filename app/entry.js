@@ -27,6 +27,11 @@ ultimateApp.config(['$routeProvider', ($rp) => {
       controller: 'AuthController',
       access: {allowAnonymous: true}
     })
+    .when('/features', {
+      template: require('./html/features.html'),
+      controller: 'AuthController',
+      access: {allowAnonymous: true}
+    })
     .when('/home', {
       template: require('./html/home.html'),
       controller: 'AuthController',

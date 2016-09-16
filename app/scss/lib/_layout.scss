@@ -1,3 +1,10 @@
+.features {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  color: white;
+}
+
 #navbar-main {
   width: 100%;
   display: flex;
