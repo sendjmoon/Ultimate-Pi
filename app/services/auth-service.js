@@ -11,9 +11,9 @@ module.exports = function(app) {
         if ($window.localStorage.token === '') {
           delete $window.localStorage.token;
           $location.path('/signin');
+          return; 
         }
         if (!options.noRedirect) $location.path('/signup');
-        // if (!noRedirect) $location.path('/signin');
       },
 
       setToken: function(token) {
