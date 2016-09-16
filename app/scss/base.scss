@@ -72,10 +72,6 @@
     width: 30px;
   }
 
-  .remote-button-container {
-    margin-top: 300px;
-  }
-
   #signout-button {
     margin: 0;
   }
@@ -149,6 +145,10 @@
       padding: 2%;
       display: block;
       background-color: black;
+    }
+
+    .remote-button-container {
+      margin-top: 300px;
     }
 
     sign-up {

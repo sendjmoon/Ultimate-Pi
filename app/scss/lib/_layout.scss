@@ -1,16 +1,3 @@
-.features {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  color: white;
-}
-
-.features li {
-  background-color: black;
-  opacity: 0.5;
-  width: 50%;
-}
-
 .about-container-primary {
   width: 100%;
   height: 100%;
@@ -53,6 +40,26 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+}
+
+.features-container {
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: $app-default;
+}
+
+.features-container li {
+  border: 1px solid black;
+  background-color: rgba(214, 38, 79, 0.4);
+}
+
+.features-container li:hover {
+  background-color: rgba(214, 38, 79, 0.8);
 }
 
 #navbar-main {
