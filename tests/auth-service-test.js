@@ -1,8 +1,8 @@
 'use strict';
 
 const angular = require('angular');
-let testApp = angular.module('testApp', [require('angular-jwt')]);
-require('../app/services')(testApp);
+let ultimateApp = angular.module('ultimateApp', [require('angular-jwt')]);
+require('../app/services')(ultimateApp);
 
 let testUser = {
   username: 'mockTestUser',
@@ -11,7 +11,7 @@ let testUser = {
 };
 
 describe('service: AuthService', function() {
-  beforeEach(angular.mock.module('testApp'));
+  beforeEach(angular.mock.module('ultimateApp'));
 
   it('should get the token', angular.mock.inject(function(auth) {
     auth.token = testUser.token;
