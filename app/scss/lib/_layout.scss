@@ -5,6 +5,12 @@
   color: white;
 }
 
+.features li {
+  background-color: black;
+  opacity: 0.5;
+  width: 50%;
+}
+
 #navbar-main {
   width: 100%;
   display: flex;
@@ -86,3 +92,14 @@ sign-up, sign-in {
   min-width: 400px;
   margin-bottom: 20px;
 }
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 768px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .features li {
+      width: 100%;
+    }
+
+  }
