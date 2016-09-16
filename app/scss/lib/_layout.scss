@@ -11,6 +11,50 @@
   width: 50%;
 }
 
+.about-container-primary {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.about-container-secondary {
+  width: 80%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.about-container-secondary h1, .developer-container h1 {
+  text-align: center;
+}
+
+.developer-container {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.developer-container ul {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.developer-container ul a {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 #navbar-main {
   width: 100%;
   display: flex;
@@ -55,6 +99,9 @@ sign-up, sign-in {
 .signup-layout {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -101,5 +148,4 @@ sign-up, sign-in {
     .features li {
       width: 100%;
     }
-
   }

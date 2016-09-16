@@ -1,3 +1,7 @@
+h1, p {
+  color: $app-default;
+}
+
 .signup-title {
   color: $app-default;
 }
@@ -17,4 +21,9 @@
 
 #signup-title-two {
   color: $app-dark;
+}
+
+#navcol-1.navbar-collapse ul li a {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.9);
 }

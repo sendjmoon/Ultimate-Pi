@@ -17,7 +17,6 @@ describe('service: AuthService', function() {
     auth.token = testUser.token;
     let token = auth.getToken();
     expect(token).toBe(testUser.token);
-
   }));
 
   it('should set the Token', angular.mock.inject(function(auth) {
@@ -25,10 +24,8 @@ describe('service: AuthService', function() {
     let testResult = auth.setToken(testToken);
     expect(testResult).toBe(testUser.token);
     expect(auth.token).toBe(testToken);
-    
     let token = auth.getToken();
     expect(token).toBe(testUser.token);
-
   }));
 
   it('should get the user', angular.mock.inject(function(auth) {
@@ -36,12 +33,7 @@ describe('service: AuthService', function() {
     console.log(auth.token);
     let userTest = auth.getUser();
     console.log(userTest);
-    
-    // auth.user = testUser.username;
-    // auth.token = testUser.token;
     expect(auth.user).toBe(undefined);
-    // let userTest = auth.getUser();
-    // expect(userTest).toBe(testUser);
   }));
 
   it('should logout the user', angular.mock.inject(function(auth) {
@@ -52,4 +44,3 @@ describe('service: AuthService', function() {
     expect(Object.keys(auth.currentUser).length === 0).toBe(true);
   }));
 });
-

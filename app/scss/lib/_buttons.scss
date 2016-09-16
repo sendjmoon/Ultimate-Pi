@@ -52,3 +52,15 @@
 #signout-button:hover {
   background-color: $app-button-bg-primary-color;
 }
+
+#developer-button {
+  border-radius: 0px;
+  width: 150px;
+  border: none;
+  background-color: rgba(214, 38, 79, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+#developer-button:hover {
+  background-color: $app-button-bg-primary-color;
+}
