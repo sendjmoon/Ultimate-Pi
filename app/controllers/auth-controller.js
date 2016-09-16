@@ -3,8 +3,8 @@
 module.exports = (app) => {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
 
-    console.log($location.url());
-    if (auth.getToken({noRedirect: true}) && $location.url().includes('home')) $location.path('/home');
+    if(auth.getToken({noRedirect: true}) && $location.url().includes('home')) $location.path('/home');
+
     this.signup = function(user) {
       this.showButtons = true;
       $http.post(this.baseUrl + '/api/signup', user)
@@ -33,13 +33,12 @@ module.exports = (app) => {
       });
     };
 
-    this.isLoggedIn = function() {
-      if (auth.getToken() && auth.getUser().username.length > 0) return true;
+    this.isLoggedIn = function () {
+      if (auth.getToken({noRedirect: true}) && auth.getUser()) return true;
     };
 
     this.getUser = auth.getUser.bind(auth);
     this.logOut = auth.logOut.bind(auth);
     this.currentUser = auth.currentUser;
-    this.toggleView = auth.toggleView;
   }]);
 };
