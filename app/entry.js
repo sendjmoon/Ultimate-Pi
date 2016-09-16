@@ -5,7 +5,6 @@ require('./scss/base.scss');
 
 const angular = require('angular');
 let ultimateApp = angular.module('ultimateApp', [require('angular-route'), require('angular-jwt')]);
-// process.env.APP_SECRET = 'testSecret';
 
 require('./services')(ultimateApp);
 require('./controllers')(ultimateApp);

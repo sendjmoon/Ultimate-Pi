@@ -1,10 +1,6 @@
-<!-- <form name="signin" data-ng-submit="$ctrl.signin($ctrl.user)">
-  <input type="text" required placeholder="Username" class="form-control" data-ng-model="$ctrl.user.username">
-  <input type="password" class="form-control" placeholder="Password" required data-ng-model="$ctrl.user.password">
-  <button type="submit" class="btn btn-default">Login</button>
-</form> -->
-
-<a href="http://www.raspberrypi.org" target="_blank"><img src="../../lib/images/pi-logo.png" width="150"/></a>
+<a href="http://www.raspberrypi.org" target="_blank">
+  <img src="../../lib/images/pi-logo.png" width="150"/>
+</a>
 
 <div id="signup-title">
   <h1 id="signup-title-header">
@@ -17,11 +13,9 @@
 </div>
 
 <form name="signin" class="signup-form" data-ng-submit="$ctrl.signin($ctrl.user)">
-  <h3 class="signup-title"> SIGN IN </h4>
+  <h3 class="signup-title"> SIGN IN </h3>
   <input type="text" class="form-control" id="signup-input" required placeholder="Username" data-ng-model="$ctrl.user.username">
   <input type="password" class="form-control" id="signup-input" required placeholder="Password" data-ng-model="$ctrl.user.password">
-
-  <button type="submit" class="btn btn-primary" id="signup-button"> Sign In </button>
-
-  <span id="signup-footer"> Not registered? <a href="#/signup" class="primary-link">Click here!</a>
+  <button type="submit" class="btn btn-primary" id="signup-button">Sign In</button>
+  <span id="signup-footer">Not registered?<a href="#/signup" class="primary-link">Click here!</a>
 </form>

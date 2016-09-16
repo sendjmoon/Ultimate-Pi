@@ -2,14 +2,16 @@
 
 module.exports = (app) => {
   app.controller('AuthController', ['$http', '$location', '$window', 'auth', function($http, $location, $window, auth) {
+
     if(auth.getToken({noRedirect: true}) && $location.url().includes('home')) $location.path('/home');
+
     this.signup = function(user) {
       this.showButtons = true;
       $http.post(this.baseUrl + '/api/signup', user)
         .then((res) => {
           auth.setToken(res.data.token);
           $location.path('/home');
-        },(err) => {
+        }, (err) => {
           alert('error in signup function: ' + err.message);
         });
     };
