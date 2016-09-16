@@ -32,7 +32,6 @@ module.exports = function(app) {
       },
 
       logOut: function() {
-        console.log('logout fxn');
         delete $window.localStorage.history;
         $window.localStorage.token = '';
         this.currentUser = {};

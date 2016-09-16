@@ -29,10 +29,7 @@ describe('service: AuthService', function() {
   }));
 
   it('should get the user', angular.mock.inject(function(auth) {
-    console.log(auth.user);
-    console.log(auth.token);
     let userTest = auth.getUser();
-    console.log(userTest);
     expect(auth.user).toBe(undefined);
   }));
 

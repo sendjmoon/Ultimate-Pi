@@ -18,7 +18,6 @@ module.exports = (app) => {
 
     this.signin = function(user) {
       this.showButtons = true;
-      console.log(user);
       $http.get(this.baseUrl + '/api/signin', {
         headers: {
           'Authorization': 'Basic ' + $window.btoa(user.username + ':' + user.password)
