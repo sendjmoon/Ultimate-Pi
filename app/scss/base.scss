@@ -28,6 +28,18 @@
     width: 100%;
   }
 
+  #navcol-1.navbar-collapse ul li {
+    margin: 0;
+    padding: 2%;
+    display: block;
+    text-align: center;
+    background-color: black;
+  }
+
+  #navcol-1.navbar-collapse ul li a:hover {
+    background-color: $app-nav-link-bg-hover;
+  }
+
   #navbar-list {
     display: none;
   }
@@ -77,11 +89,29 @@
   }
 }
 
+@media (max-width: 570px) {
+  .developer-container ul {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .developer-container ul a {
+    width: 100%;
+  }
+}
+
 
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 680px)
   and (-webkit-min-device-pixel-ratio: 2) {
+    main {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
 
     #navbar-main {
       display: flex;
@@ -98,6 +128,10 @@
       justify-content: flex-end;
     }
 
+    .nav.navbar-nav {
+      background-color: rgba(0, 0, 0, 1.0);
+    }
+
     #navbar-title {
       width: 90%;
     }
@@ -106,16 +140,11 @@
       width: 30px;
     }
 
-    main {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-
-    .remote-button-container {
-      margin-top: 300px;
+    #navcol-1.navbar-collapse ul li {
+      margin: 0;
+      padding: 2%;
+      display: block;
+      background-color: black;
     }
 
     sign-up {
