@@ -2,7 +2,7 @@
 
 module.exports = function(app) {
   app.component('navBar', {
-    controller: 'AuthController',
+    controller: 'NavController',
     template: require('./nav-bar-template.html'),
     bindings: {
       baseUrl: '<'

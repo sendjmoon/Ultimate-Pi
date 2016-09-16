@@ -8,6 +8,7 @@ module.exports = function(app) {
         options = options || {};
         if (this.token) return this.token;
         if ($window.localStorage.token) return this.setToken($window.localStorage.token);
+        if ($window.localStorage.token === '') $location.path('/signin');
         if (!options.noRedirect) $location.path('/signup');
         // if (!noRedirect) $location.path('/signin');
       },
@@ -34,8 +35,7 @@ module.exports = function(app) {
         this.toggleView = false;
         this.token = '';
         $location.path('/signin');
-      },
-
+      }
     };
   }]);
 };
