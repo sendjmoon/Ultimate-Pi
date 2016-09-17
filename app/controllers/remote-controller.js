@@ -5,7 +5,6 @@ module.exports = function(app) {
     this.history = [];
     this.getButtons = function() {
       let dataJSON = require('../lib/data/remote-data.js');
-      console.log(dataJSON);
       let buttonArray = [];
       dataJSON.forEach(function(index) {
         buttonArray.push(index);
@@ -25,27 +24,29 @@ module.exports = function(app) {
           historyArray.pop();
         }
       }
-      
       $window.localStorage.history = JSON.stringify(historyArray);
       this.history = historyArray;
-      console.log(historyArray);
-      console.log('command: ' + btnCommand);
 
       $http.get(this.baseUrl + '/api/remote/' + btnCommand)
       .then((res) => {
         console.log('res.data: ' + res.data);
       }).catch((err) => {
-        console.log(err);
+        console.log('error: ' + err);
       });
     };
 
-
     this.getHistory = function() {
-      if ($window.localStorage.history !== undefined) {
+      if ($window.localStorage.history !== undefined || $window.localStorage.history === '') {
         this.history = JSON.parse($window.localStorage.history);
       } else {
-        this.history = 'No History';
+        this.history = '';
       }
     };
+
+    this.hasHistory = function() {
+      if (this.history) return true;
+      return false;
+    };
+    
   }]);
 };
