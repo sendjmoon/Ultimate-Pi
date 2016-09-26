@@ -2,7 +2,7 @@
   <nav-bar base-url="baseUrl"></nav-bar>
   <div class="features-container">
     <h1> FEATURES </h1>
-    <h3>HISTORY:</h3>
+    <h3 ng-show="remoteCtrl.hasHistory()">HISTORY:</h3>
     <ul ng-init="remoteCtrl.getHistory()">
       <li data-ng-repeat="button in remoteCtrl.history track by $index">{{button}}</li>
     </ul>
