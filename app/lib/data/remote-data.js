@@ -1,4 +1,5 @@
 'use strict';
+//nice, I like the use of this file to maintain this information
 
 let buttons = [
   {
