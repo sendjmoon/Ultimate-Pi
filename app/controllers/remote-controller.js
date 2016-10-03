@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = function(app) {
+  //the name of this controller entertains me 
   app.controller('RemoteController', ['$http', '$window', function($http, $window) {
     this.history = [];
     this.getButtons = function() {
@@ -28,6 +29,7 @@ module.exports = function(app) {
       this.history = historyArray;
 
       $http.get(this.baseUrl + '/api/remote/' + btnCommand)
+      //there's probably a better way to do this I'd like to see this be a single line
       .then((res) => {
         console.log('res.data: ' + res.data);
       }).catch((err) => {
@@ -36,6 +38,7 @@ module.exports = function(app) {
     };
 
     this.getHistory = function() {
+      // this doesn't really need to an if/else
       if ($window.localStorage.history !== undefined || $window.localStorage.history === '') {
         this.history = JSON.parse($window.localStorage.history);
       } else {
@@ -44,6 +47,7 @@ module.exports = function(app) {
     };
 
     this.hasHistory = function() {
+      //just return !!(this.history) way cleaner
       if (this.history) return true;
       return false;
     };
